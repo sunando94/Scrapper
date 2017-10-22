@@ -19,7 +19,7 @@ class Helper:
 			print('MaxRetryError: request timeout. Please check your network connectivity')
 
 
-	def getSoup(self,data,element):
+	def getSoup(self,data):
 		try:
 			soup=bsoup(data,'html5lib')
 			return soup

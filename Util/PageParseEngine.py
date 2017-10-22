@@ -3,38 +3,51 @@ __author__ = 'Sunando Bhattacharya'
 
 from bs4 import BeautifulSoup as bsoup
 
-class PageParseEngine(object):
-	"""\used to parse custom Syntax parser"""
+class PageParseEngine:
+
+	""" used to parse custom Syntax parser"""
 	def __init__(self, soup,pattern,type='Inline',*args):
-		super(ClassName, self).__init__()
+		
 		self.parsePattern=pattern
 		self.soup=soup
 		self.type='Inline'
-		if(self.type == 'File')
-		self.filePath=args[0]
+		if self.type == 'File':
+			self.filePath=args[0]
 
 	def __getFile__(self,path):
 		file=open(path,'r')
 		data=''
-		for line in file
+		for line in file:
 			data+=line
 			data+='\n'
 		return data
-	def __getTag__(self,data,tag,*args):
-		soup=bsoup(data,'html5lib')
+	def __updateSoup__(self,data):
+		self.soup=bsoup(data,'html5lib')
+
+	def __getFromTaglist__(self,tag,*args):
 		tagList={
-		'body':soup.body,
-		'a:first':soup.a,
-		'a':soup.find_all('a'),
-		'a:last':soup.find_all('a')[-1],
-		'a:nth': lambda x:soup.find_all('a')[x],
-		'h1':soup.h1,
-		'h2':soup.h2,
-		'h3':soup.h3,
-		'h4':soup.h4,
-		'h5':soup.h5,
-		'h6':soup.h6,
-		'div':soup.div,
-		'div class':lambda x:soup.find_all('div',{'class':x})
+		'body':self.soup.body,
+		'a:first':self.soup.a,
+		'a':self.soup.find_all('a'),
+		'a:last':self.soup.find_all('a')[-1],
+		'a:nth': lambda x:self.soup.find_all('a')[x],
+		'h1':self.soup.h1,
+		'h2':self.soup.h2,
+		'h3':self.soup.h3,
+		'h4':self.soup.h4,
+		'h5':self.soup.h5,
+		'h6':self.soup.h6,
+		'div':self.soup.div,
+		'div class':lambda x:self.soup.find_all('div',{'class':x})
 		}
+		if len(args)==0:
+			return tagList[tag]()
+		else:
+			return tagList[tag](args)
+
+	def getTag(self,data,tag,*args):
+		self.__updateSoup__(data)
+		print(self.__getFromTaglist__(tag,*args))
+		
+
 		
