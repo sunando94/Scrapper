@@ -35,6 +35,6 @@ class PageParseEngine(object):
 		'h5':soup.h5,
 		'h6':soup.h6,
 		'div':soup.div,
-		
+		'div class':lambda x:soup.find_all('div',{'class':x})
 		}
 		
