@@ -2,6 +2,7 @@ __author__ = 'Sunando Bhattacharya'
 
 
 from bs4 import BeautifulSoup as bsoup
+import re
 
 class PageParseEngine:
 
@@ -38,7 +39,20 @@ class PageParseEngine:
 		'h5':self.soup.h5,
 		'h6':self.soup.h6,
 		'div':self.soup.div,
-		'div class':lambda x:self.soup.find_all('div',{'class':x})
+		'div class':lambda x:self.soup.find_all('div',{'class':x}),
+		'decendents': lambda x:x.decendents,
+		'parent': lambda x:x.parent,
+		'next-sibling':lambda x:x.next_sibling,
+		'prev-sibling':lambda x:x.previous_sibling,
+		'next-siblings':lambda x:x.next_siblings,
+		'prev-siblings':lambda x:x.previous_siblings,
+		'find': lambda x:self.soup.find(x),
+		'find all': lambda x:self.soup.find(x),
+		'find allre': lambda x:self.soup.find(re.compile(x)),
+		'find all-id': lambda x:self.soup.find_all(id=x),
+		'find css-sel': lambda x:self.soup.select(x),
+		'get content': self.soup.get_text(),
+		'get content sep': lambda x:self.soup.get_text(x)
 		}
 		if len(args)==0:
 			return tagList[tag]()
@@ -48,6 +62,16 @@ class PageParseEngine:
 	def getTag(self,data,tag,*args):
 		self.__updateSoup__(data)
 		print(self.__getFromTaglist__(tag,*args))
+
+	def langParse(self):
+		sc=self.parsePattern
+		tokens=sc.split(' ')
+		tokenLen=len(tokens)
+		obList=[]
+		stmtList=[]
+		keywords=[]
+		for i in range(tokenLen):
+				
 		
 
 		

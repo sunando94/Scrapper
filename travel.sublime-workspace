@@ -5,15 +5,19 @@
 		[
 			[
 				"__",
-				"__helper__"
+				"__getFromTaglist"
+			],
+			[
+				"tag",
+				"tagList"
+			],
+			[
+				"_",
+				"__updateSoup__"
 			],
 			[
 				"re",
 				"request"
-			],
-			[
-				"_",
-				"__helper__"
 			],
 			[
 				"Url",
@@ -31,7 +35,7 @@
 			"file": "Util/Helper.py",
 			"settings":
 			{
-				"buffer_size": 557,
+				"buffer_size": 523,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "#file to import library used to query a website"
@@ -41,10 +45,19 @@
 			"file": "main.py",
 			"settings":
 			{
-				"buffer_size": 357,
+				"buffer_size": 478,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "class Main:"
+			}
+		},
+		{
+			"file": "Util/PageParseEngine.py",
+			"settings":
+			{
+				"buffer_size": 1143,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -135,7 +148,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -144,15 +157,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 557,
+						"buffer_size": 523,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								528,
-								528
+								439,
+								439
 							]
 						],
 						"settings":
@@ -161,10 +174,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 11.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -173,15 +186,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 357,
+						"buffer_size": 478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								312,
-								312
+								93,
+								93
 							]
 						],
 						"settings":
@@ -193,7 +206,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Util/PageParseEngine.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1091,
+								1091
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
