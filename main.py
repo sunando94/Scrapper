@@ -11,7 +11,7 @@ class Main:
 	def main(self):
 		page = self.__helper__.getPage(self.__url__)
 		soup=self.__helper__.getSoup(page)
-		self.__pe__=pe.PageParseEngine(soup,'','Inline')
+		self.__pe__=pe.PageParseEngine(soup,'var hello=helloworld;var tokens=helloworld;','Inline')
 		self.__pe__.getTag(page,'a:last')
 
 

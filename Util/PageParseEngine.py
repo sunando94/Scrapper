@@ -2,7 +2,20 @@ __author__ = 'Sunando Bhattacharya'
 
 
 from bs4 import BeautifulSoup as bsoup
+from lark import Lark
+from lark import Transformer
 import re
+
+class MyTransformer(Transformer):
+	def start(self,item):
+		print()
+		# print(item)
+	def string(self,item):
+		# print(type(item[0].value))
+		print(item[0].value)
+
+	# WORD = list
+
 
 class PageParseEngine:
 
@@ -61,16 +74,26 @@ class PageParseEngine:
 
 	def getTag(self,data,tag,*args):
 		self.__updateSoup__(data)
-		print(self.__getFromTaglist__(tag,*args))
+		self.langParse()
+		print(self.soup)
 
 	def langParse(self):
-		sc=self.parsePattern
-		tokens=sc.split(' ')
-		tokenLen=len(tokens)
-		obList=[]
-		stmtList=[]
-		keywords=[]
-		for i in range(tokenLen):
+		l = Lark('''
+			string : WORD
+			start: string*
+					%import common.WORD
+					%ignore " "
+					''',start='start', lexer='standard')
+		tree = l.parse("My name is Sunando")
+		print( tree.pretty() )
+		MyTransformer().transform(tree)
+
+
+
+
+
+
+
 				
 		
 

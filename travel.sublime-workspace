@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"toke",
+				"tokenLen"
+			],
+			[
+				"parse",
+				"parsePattern"
+			],
+			[
+				"get",
+				"get_text"
+			],
+			[
+				"c",
+				"content"
+			],
+			[
+				"s",
+				"soup"
+			],
+			[
+				"fi",
+				"find_all"
+			],
+			[
 				"__",
 				"__getFromTaglist"
 			],
@@ -55,7 +79,7 @@
 			"file": "Util/PageParseEngine.py",
 			"settings":
 			{
-				"buffer_size": 1143,
+				"buffer_size": 1896,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -215,15 +239,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1143,
+						"buffer_size": 1896,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1091,
-								1091
+								1888,
+								1888
 							]
 						],
 						"settings":
@@ -232,7 +256,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
